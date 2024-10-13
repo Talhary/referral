@@ -38,7 +38,7 @@ function generateRandomString(length = 10) {
           Referer: "https://fxifyfutures.com/",
           "Referrer-Policy": "strict-origin-when-cross-origin",
         },
-        body: `{\"publicToken\":\"ODeXgDQ6O0uOUOXn0N6DxXkEVkU\",\"params\":{\"event\":\"registration\",\"user\":{\"firstname\":\"jfdsjl\",\"lastname\":\"dfdsdfjdslkfj\",\"email\":\"${generateRandomString()}@gmail.com\",\"acquiredFrom\":\"form_widgetV2\",\"initialAcquiredFrom\":\"https://fxifyfutures.com/?referralCode=${ref}&refSource=copy\",\"extraData\":{},\"consents\":[]},\"referrer\":{\"referralCode\":\"cf5rwn8\"},\"refSource\":\"copy\",\"acquiredFrom\":\"form_widgetV2\"}}`,
+        body: `{\"publicToken\":\"ODeXgDQ6O0uOUOXn0N6DxXkEVkU\",\"params\":{\"event\":\"registration\",\"user\":{\"firstname\":\"jfdsjl\",\"lastname\":\"dfdsdfjdslkfj\",\"email\":\"${generateRandomString()}@gmail.com\",\"acquiredFrom\":\"form_widgetV2\",\"initialAcquiredFrom\":\"https://fxifyfutures.com/?referralCode=${ref}&refSource=copy\",\"extraData\":{},\"consents\":[]},\"referrer\":{\"referralCode\":\"${ref}\"},\"refSource\":\"copy\",\"acquiredFrom\":\"form_widgetV2\"}}`,
         method: "POST",
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ function generateRandomString(length = 10) {
       console.log(data);
     } catch (err) {
       console.log(err);
-    }
+    } 
   };
   const act = async (code) => {
     try {
